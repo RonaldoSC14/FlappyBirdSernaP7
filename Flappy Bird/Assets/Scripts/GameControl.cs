@@ -14,6 +14,10 @@ public class GameControl : MonoBehaviour
     public bool gameOver = false;
     public float scrollSpeed = -1.5f;
 
+    public AudioSource audio;
+    public AudioClip dieClip;
+    public AudioClip scoreClip;
+
     private int score = 0;
 
     // Start is called before the first frame update
@@ -40,6 +44,9 @@ public class GameControl : MonoBehaviour
 
     public void BirdScored()
     {
+        audio.clip = scoreClip;
+        audio.Play();
+
         if (gameOver)
         {
             return;
@@ -50,6 +57,9 @@ public class GameControl : MonoBehaviour
 
     public void BirdDied()
     {
+        audio.clip = dieClip;
+        audio.Play();
+
         gameOverText.SetActive(true);
         gameOver = true;
     }
