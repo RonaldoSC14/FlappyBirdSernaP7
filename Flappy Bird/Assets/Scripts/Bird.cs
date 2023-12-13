@@ -27,7 +27,7 @@ public class Bird : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if(audio.isPlaying == false)
+                if (audio.isPlaying == false)
                 {
                     audio.clip = flyClip;
                     audio.Play();
